@@ -14,9 +14,12 @@ export class VehiculoListComponent implements OnInit {
 
   constructor(private vehiculoService: VehiculoService) { }
 
+
   getVehiculos(): void {
     this.vehiculoService.getVehiculos().subscribe((vehiculos) => {
       this.vehiculos = vehiculos;
+      this.vehiculos.push(carro1, carro2, carro3)
+
     });
   }
 
@@ -25,3 +28,8 @@ export class VehiculoListComponent implements OnInit {
   }
 
 }
+
+let carro1 = new Vehiculo (7, 'bmw', '420', 'nitro', 2022, 0, 'Blanco', "https://cdn.group.renault.com/ren/co/vehicles/kangoo/home/renault-kangoo-exterior.jpg");
+let carro2 = new Vehiculo (8, 'Mercedez-benz', 'Series A', 'Race', 2022, 0, 'Rojo', "https://cdn.group.renault.com/ren/co/vehicles/kangoo/home/renault-kangoo-exterior.jpg");
+let carro3 = new Vehiculo (9, 'Renault', 'Megane', 'Classic', 2006, 0, 'Blanco', "https://cdn.group.renault.com/ren/co/vehicles/kangoo/home/renault-kangoo-exterior.jpg");
+
